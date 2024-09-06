@@ -1,17 +1,13 @@
 {
-    "id": "com.mattermost.plugin-starter-template",
-    "name": "Plugin Starter Template",
-    "description": "This plugin serves as a starting point for writing a Mattermost plugin.",
-    "homepage_url": "https://github.com/mattermost/mattermost-plugin-starter-template",
-    "support_url": "https://github.com/mattermost/mattermost-plugin-starter-template/issues",
-    "icon_path": "assets/starter-template-icon.svg",
+    "id": "com.mattermost.dm-control-plugin",
+    "name": "DM Control Plugin",
+    "description": "This plugin allows admins to control direct messages and group chats based on user roles and other criteria.",
+    "version": "1.0.0",
     "min_server_version": "6.2.1",
     "server": {
         "executables": {
             "linux-amd64": "server/dist/plugin-linux-amd64",
-            "linux-arm64": "server/dist/plugin-linux-arm64",
             "darwin-amd64": "server/dist/plugin-darwin-amd64",
-            "darwin-arm64": "server/dist/plugin-darwin-arm64",
             "windows-amd64": "server/dist/plugin-windows-amd64.exe"
         }
     },
@@ -19,8 +15,51 @@
         "bundle_path": "webapp/dist/main.js"
     },
     "settings_schema": {
-        "header": "",
-        "footer": "",
-        "settings": []
+        "header": "Configure DM Control Plugin",
+        "footer": "For more information, visit: https://github.com/yourusername/mattermost-dm-control-plugin",
+        "settings": [
+            {
+                "key": "disable_dm_on_join",
+                "display_name": "Disable DMs for New Users",
+                "type": "bool",
+                "help_text": "If enabled, direct messages will be disabled for new users when they join.",
+                "default": false
+            },
+            {
+                "key": "disable_gm_on_join",
+                "display_name": "Disable Group Messages for New Users",
+                "type": "bool",
+                "help_text": "If enabled, group messages will be disabled for new users when they join.",
+                "default": false
+            },
+            {
+                "key": "disable_dm_for_existing_user",
+                "display_name": "Disable DMs for Existing Users",
+                "type": "bool",
+                "help_text": "If enabled, direct messages will be disabled for all existing users unless they have an allowed role.",
+                "default": false
+            },
+            {
+                "key": "disable_gm_for_existing_user",
+                "display_name": "Disable Group Messages for Existing Users",
+                "type": "bool",
+                "help_text": "If enabled, group messages will be disabled for all existing users unless they have an allowed role.",
+                "default": false
+            },
+            {
+                "key": "excluded_users",
+                "display_name": "Excluded Users",
+                "type": "text",
+                "help_text": "Comma-separated list of usernames that are excluded from DM and GM restrictions.",
+                "default": ""
+            },
+            {
+                "key": "allowed_roles",
+                "display_name": "Allowed Roles",
+                "type": "text",
+                "help_text": "Comma-separated list of roles allowed to send DMs and participate in group chats. E.g., system_admin,custom_role",
+                "default": "system_admin"
+            }
+        ]
     }
 }

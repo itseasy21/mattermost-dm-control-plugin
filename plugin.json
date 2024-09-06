@@ -16,7 +16,7 @@
     },
     "settings_schema": {
         "header": "Configure DM Control Plugin",
-        "footer": "For more information, visit: https://github.com/yourusername/mattermost-dm-control-plugin",
+        "footer": "For more information, visit: https://github.com/itseasy21/mattermost-dm-control-plugin",
         "settings": [
             {
                 "key": "disable_dm_on_join",

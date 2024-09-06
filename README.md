@@ -13,7 +13,7 @@ This plugin provides granular control over Direct Messages (DMs) and Group Messa
 
 ## Installation
 
-1. Go to the [releases page](https://github.com/yourusername/mattermost-dm-control-plugin/releases) of this repository and download the latest release.
+1. Go to the [releases page](https://github.com/itseasy21/mattermost-dm-control-plugin/releases) of this repository and download the latest release.
 2. Upload this file in the Mattermost System Console under **System Console > Plugins > Plugin Management**.
 3. Enable the plugin in the System Console.
 
